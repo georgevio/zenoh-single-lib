@@ -1,5 +1,4 @@
 #include "zenoh_manager.h"
-#include "zenoh_handlers.h"
 #include "zenoh_scout.h"
 #include "zenoh_utils.h"
 #include "zenoh_heartbeat.h"
