@@ -4,7 +4,7 @@ This folder contains a self-contained, plug-and-play module for handling [Zenoh]
 
 The module is autonomous: to use it, you just need to copy this `zenoh` directory into your project's `main` folder and configure your device's role and transport settings in a single header file.
 
-<img src="zenoh_lib.png.png" alt="zenoh_lib.png" width="400">
+<img src="zenoh_lib.png" alt="zenoh_lib.png" width="400">
 
 ## Key Features
 
