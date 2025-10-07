@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static const char *TAG = "Z_SCOUT  ";
+static const char *TAG = "Z_SCUT";
 
 // Scout Functionality Callbacks
 static void scout_callback(z_loaned_hello_t *hello, void *context) {
@@ -36,9 +36,9 @@ void run_scout() {
 
     char scout_locator[64];
     snprintf(scout_locator, sizeof(scout_locator), "%s/%s:%s#iface=%s",
-             ZENOH_PROTOCOL, ZENOH_MULTICAST_IP,
-             ZENOH_PORT, net_info.interface_name);
-    ESP_LOGI(TAG, "SCOUT on %s", scout_locator);
+            ZENOH_PROTOCOL, ZENOH_LISTEN_BROADCAST_IP, 
+            ZENOH_PORT, net_info.interface_name);
+    ESP_LOGI(TAG, "SCOUT with locator: %s", scout_locator);
     zp_config_insert(z_loan_mut(config), Z_CONFIG_CONNECT_KEY, scout_locator);
 
     z_owned_closure_hello_t closure;

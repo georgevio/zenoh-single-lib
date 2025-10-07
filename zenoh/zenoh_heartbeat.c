@@ -7,7 +7,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-static const char *TAG = "Z_HRTBEAT";
+static const char *TAG = "Z_HEART";
 
 static z_owned_publisher_t heartbeat_publisher;
 static z_owned_subscriber_t subscriber_heartbeat;

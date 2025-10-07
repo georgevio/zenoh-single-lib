@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 
-static const char *TAG = "Z_UTILS";
+static const char *TAG = "Z_UTIL";
 
 // Global zenoh listener for logging
 static char primary_listener[64] = "N/A";
@@ -44,8 +44,7 @@ network_info_t active_network_interface(const char* log_prefix) {
         strncpy(local_network_info.interface_name, "N/A", sizeof(local_network_info.interface_name));
     }
 
-    ESP_LOGD(TAG, "%s | Active Interface: '%s', IP: %s",
-        log_prefix,
+    ESP_LOGI(TAG, "Active Iface: '%s', IP: %s",
         local_network_info.interface_name,
         local_network_info.ip_address);
         
