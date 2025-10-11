@@ -60,16 +60,21 @@ Open `zenoh/zenoh_config.h` and modify the **User Configuration** section. This 
 Based on your choices, the correct Zenoh `mode` (`client` or `peer`) and transport endpoints are automatically generated. The pre-processor directives will raise a compile-time error if you select an invalid combination (e.g., a `SERVER` role with a `TCP_CLIENT` transport).
 
 ### IMPORTANT NOTE FOR TCP PEER 
-Apply the following in idf.py menuconfig
+
+Apply the following in `idf.py menuconfig`
+```
 Component config -LWIP
 [*] Enable SO_LINGER processing
+```
 
 **BE CAREFUL: in zenoh config.h, they have to be the same at both communicating sides!**
+```
 #define Z_FRAG_MAX_SIZE 1024
 #define Z_BATCH_UNICAST_SIZE 1024
 #define Z_BATCH_MULTICAST_SIZE 1024
 #define Z_CONFIG_SOCKET_TIMEOUT 3000
 ## Main Application Example
+```
 
 Here is a complete example of how to integrate this module into your `app_main.cpp`. It demonstrates initializing WiFi, starting the Zenoh manager, and using its publish/subscribe functionality.
 
